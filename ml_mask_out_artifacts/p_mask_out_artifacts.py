@@ -59,7 +59,7 @@ def mask_out_artifacts(*, timeseries, timeseries_out, threshold=6, chunk_size=20
         Number of standard deviations away from the mean to consider as artifacts (default of 6).
     chunk_size : int
         This chunk size will be the number of samples that will be set to zero if the RSS of this chunk is above threshold.
-    num_write_chunks: int
+    num_write_chunks : int
         How many chunks will be simultaneously written to the timeseries_out path (default of 150).
     """
 
