@@ -131,6 +131,7 @@ def mask_out_artifacts(*, timeseries, timeseries_out, threshold=6, chunk_size=20
     num_timepoints_not_used = sum(use_it == 0)
     print("Using %.2f%% of all timepoints.\n" % (
     num_timepoints_used * 100.0 / (num_timepoints_used + num_timepoints_not_used)))
+    return True
 
 
 def mask_chunk(num, use_it):
