@@ -56,7 +56,7 @@ def mask_out_artifacts(*, timeseries, timeseries_out, threshold=6, chunk_size=20
         masked output (MxN array)
 
     threshold : int
-        Number of standard deviations away from the mean to consider as artifacts (default of 6).
+        Number of standard deviations away from the mean RSS for the chunk to be considered as artifact.
     chunk_size : int
         This chunk size will be the number of samples that will be set to zero if the RSS of this chunk is above threshold.
     num_write_chunks : int

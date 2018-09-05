@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c3324ae-67c6-4040-842c-b6a77d225988" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ml_mask_out_artifacts/test_mask_out_artifacts.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ml_mask_out_artifacts/p_mask_out_artifacts.py" afterPath="$PROJECT_DIR$/ml_mask_out_artifacts/p_mask_out_artifacts.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="p_mask_out_artifacts.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="p_mask_out_artifacts.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ml_mask_out_artifacts/p_mask_out_artifacts.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+            <state relative-caret-position="346">
+              <caret line="44" column="53" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="44" selection-end-column="53" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -25,7 +26,26 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="test_mask_out_artifacts.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ml_mask_out_artifacts/test_mask_out_artifacts.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,13 +53,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/../ml_ephys/ml_ephys/preprocessing/preprocessing.py.mp" />
         <option value="$PROJECT_DIR$/ml_mask_out_artifacts/p_mask_out_artifacts.py" />
+        <option value="$PROJECT_DIR$/ml_mask_out_artifacts/test_mask_out_artifacts.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-5" />
-    <option name="y" value="12" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1176" />
   </component>
@@ -79,7 +101,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ms4_geoff_pipeline" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -138,12 +160,46 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../ml_ephys/ml_ephys/preprocessing/mask_out_artifacts_spec.py.mp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ml_ephys/ml_ephys/preprocessing/p_mask_out_artifacts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ml_ephys/ml_ephys/preprocessing/preprocessing.py.mp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ml_mask_out_artifacts/p_mask_out_artifacts.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+        <state relative-caret-position="346">
+          <caret line="44" column="53" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="44" selection-end-column="53" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ml_mask_out_artifacts/test_mask_out_artifacts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
