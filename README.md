@@ -3,6 +3,8 @@ Mountainlab processor that will perform simple method of masking out large ampli
 
 ## Installation
 
+**Note: This has been added to the [ml_ephys](https://github.com/magland/ml_ephys) repo so you might already have this processor**
+
 Example: 
 ```
 cd ~/conda/envs/mlab/etc/mountainlab/packages
