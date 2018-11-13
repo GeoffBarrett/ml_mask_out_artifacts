@@ -42,23 +42,21 @@ class SharedChunkInfo():
 
 
 def mask_out_artifacts(*, timeseries, timeseries_out, threshold=6, chunk_size=2000, num_write_chunks=150,
-                         num_processes=os.cpu_count()):
+                       num_processes=os.cpu_count()):
     """
-    Masks out artifacts. Each chunk will be analyzed, and if the RSS of the chunk is above threshold, all the
-    samples in this chunk (and neighboring chunks) will be set to zero.
-
+    Masks out artifacts. Each chunk will be analyzed, and if the square root of the
+    RSS of the chunk is above threshold, all the samples in this chunk (and neighboring chunks)
+    will be set to zero.
     Parameters
     ----------
     timeseries : INPUT
         MxN raw timeseries array (M = #channels, N = #timepoints)
-
     timeseries_out : OUTPUT
         masked output (MxN array)
-
     threshold : int
-        Number of standard deviations away from the mean RSS for the chunk to be considered as artifact.
+        Number of standard deviations away from the mean to consider as artifacts (default of 6).
     chunk_size : int
-        This chunk size will be the number of samples that will be set to zero if the RSS of this chunk is above threshold.
+        This chunk size will be the number of samples that will be set to zero if the square root RSS of this chunk is above threshold.
     num_write_chunks : int
         How many chunks will be simultaneously written to the timeseries_out path (default of 150).
     """
@@ -111,9 +109,15 @@ def mask_out_artifacts(*, timeseries, timeseries_out, threshold=6, chunk_size=20
 
         artifact_indices = np.where(vals > mean0 + sigma0 * threshold)[0]
 
+        # check if the first chunk is above threshold, ensure that we don't use negative indices later
+        negIndBool = np.where(artifact_indices > 0)[0]
+
+        # check if the last chunk is above threshold to avoid a IndexError
+        maxIndBool = np.where(artifact_indices < num_chunks - 1)[0]
+
         use_it[artifact_indices] = 0
-        use_it[artifact_indices - 1] = 0  # don't use the neighbor chunks either
-        use_it[artifact_indices + 1] = 0  # don't use the neighbor chunks either
+        use_it[artifact_indices[negIndBool] - 1] = 0  # don't use the neighbor chunks either
+        use_it[artifact_indices[maxIndBool] + 1] = 0  # don't use the neighbor chunks either
 
         print("For channel %d: mean=%.2f, stdev=%.2f, chunk size = %d\n" % (m, mean0, sigma0, chunk_size))
 
@@ -130,7 +134,7 @@ def mask_out_artifacts(*, timeseries, timeseries_out, threshold=6, chunk_size=20
     num_timepoints_used = sum(use_it)
     num_timepoints_not_used = sum(use_it == 0)
     print("Using %.2f%% of all timepoints.\n" % (
-    num_timepoints_used * 100.0 / (num_timepoints_used + num_timepoints_not_used)))
+        num_timepoints_used * 100.0 / (num_timepoints_used + num_timepoints_not_used)))
     return True
 
 
@@ -180,7 +184,7 @@ def mask_chunk(num, use_it):
 
 def get_masked_indices(use_it, write_chunk_size, chunk_size, num_write_chunks):
     indices = np.arange(write_chunk_size).reshape((num_write_chunks, chunk_size))
-    return indices[use_it == 0, :].flatten()
+    return indices[np.where(use_it == 0)[0], :].flatten()  # fix by jfm 9/5/18
 
 
 def test_mask_out_artifacts():
@@ -218,7 +222,7 @@ def test_mask_out_artifacts():
     # write as mda
     mdaio.writemda32(signal.reshape((1, -1)), timeseries)
 
-    # run the mask artefacts
+    # run the mask artifacts
     mask_out_artifacts(timeseries=timeseries, timeseries_out=timeseries_out, threshold=6, chunk_size=2000,
                        num_write_chunks=150)
 
